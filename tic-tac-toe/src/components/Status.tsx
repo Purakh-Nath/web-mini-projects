@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
+import type { Variants, Transition } from 'framer-motion'
 import type { Player } from '../types/game'
 
 interface StatusProps {
@@ -7,15 +8,15 @@ interface StatusProps {
   gameOver: boolean
 }
 
-const bannerVariants = {
+const bannerVariants: Variants = {
   hidden: { opacity: 0, y: -16, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { type: 'spring', stiffness: 300, damping: 22 },
+    transition: { type: 'spring', stiffness: 300, damping: 22 } as Transition,
   },
-  exit: { opacity: 0, y: 16, scale: 0.95, transition: { duration: 0.18 } },
+  exit: { opacity: 0, y: 16, scale: 0.95, transition: { duration: 0.18 } as Transition },
 }
 
 function TurnDot({ player }: { player: Player }) {

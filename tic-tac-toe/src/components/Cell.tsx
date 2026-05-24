@@ -1,17 +1,18 @@
 import { motion } from 'framer-motion'
+import type { Variants, Transition } from 'framer-motion'
 import type { CellProps } from '../types/game'
 
-const symbolVariants = {
+const symbolVariants: Variants = {
   hidden: { scale: 0, rotate: -30, opacity: 0 },
   visible: {
     scale: 1,
     rotate: 0,
     opacity: 1,
-    transition: { type: 'spring', stiffness: 400, damping: 20 },
+    transition: { type: 'spring', stiffness: 400, damping: 20 } as Transition,
   },
 }
 
-const cellVariants = {
+const cellVariants: Variants = {
   idle: { scale: 1 },
   tap: { scale: 0.93 },
 }

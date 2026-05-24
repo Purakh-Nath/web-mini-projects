@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import type { Variants, Transition } from 'framer-motion'
 import { Cell } from './Cell'
 import type { Board as BoardType, CellValue } from '../types/game'
 
@@ -9,19 +10,19 @@ interface BoardProps {
   disabled: boolean
 }
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: { staggerChildren: 0.05 },
   },
 }
 
-const cellEntryVariants = {
+const cellEntryVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { type: 'spring', stiffness: 300, damping: 24 },
+    transition: { type: 'spring', stiffness: 300, damping: 24 } as Transition,
   },
 }
 

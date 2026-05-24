@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import type { GameState, Player } from '../types/game'
+import type { GameState } from '../types/game'
 import {
   calculateWinner,
   isDraw,
